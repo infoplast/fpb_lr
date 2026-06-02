@@ -1,15 +1,16 @@
 import streamlit as st
 
-st.title("Cloud Script Runner")
-st.write("Click the button below to execute the Python automation script.")
+# 1. Give the webpage a clean title
+st.title("📊 Run Lockroom script")
+st.write("Click the button below to run the Activate Ice ream Locker room script.")
 
-# The trigger button
-if st.button("🚀 Run Python Script"):
-    st.info("Script started...")
-    
-    try:
-        # --- PASTE YOUR SCRIPT CODE HERE ---
-      import gspread
+# 2. Create the big trigger button
+if st.button("🚀 Run Script Now", type="primary"):
+    with st.spinner("Running... please wait."):
+        
+        try:
+            # --------------------------------------------------
+import gspread
 import pymysql
 from tqdm import tqdm
 
@@ -373,11 +374,9 @@ for i in (range(1, worksheet.row_count)):
 cursor.close()
 conn.close()
 
-        # Example:
-        import time
-        time.sleep(2) 
-        # -----------------------------------
-        
-        st.success("✅ Script executed successfully!")
-    except Exception as e:
-        st.error(f"❌ An error occurred: {e}")
+            # --------------------------------------------------
+            
+            st.success("✅ Done! The script completed successfully.")
+            
+        except Exception as e:
+            st.error(f"❌ Something went wrong: {e}")
