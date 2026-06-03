@@ -9,7 +9,7 @@ if st.button("🚀 Run Script Now", type="primary"):
     with st.spinner("Running... please wait."):
         
         try:
-            # --------------------------------------------------
+
 import gspread
 import pymysql
 from tqdm import tqdm
